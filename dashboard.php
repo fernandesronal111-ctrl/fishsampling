@@ -24,11 +24,14 @@ $specimens = $conn->query("SELECT COUNT(*) c FROM specimens")->fetch_assoc()['c'
 ======================== */
 $visitData=[];
 
-$res=$conn->query("
-SELECT MONTHNAME(visit_date) m, COUNT(*) c
+$res = $conn->query("
+SELECT 
+    MONTH(visit_date) AS month_num,
+    MONTHNAME(visit_date) AS m,
+    COUNT(*) AS c
 FROM visits
-GROUP BY MONTH(visit_date)
-ORDER BY MONTH(visit_date)
+GROUP BY MONTH(visit_date), MONTHNAME(visit_date)
+ORDER BY month_num
 ");
 
 while($r=$res->fetch_assoc()){
@@ -42,14 +45,15 @@ while($r=$res->fetch_assoc()){
 ======================== */
 $speciesMonthData=[];
 
-$res=$conn->query("
+$res = $conn->query("
 SELECT 
-    MONTHNAME(v.visit_date) m,
-    COUNT(DISTINCT s.species_id) c
+    MONTH(v.visit_date) AS month_num,
+    MONTHNAME(v.visit_date) AS m,
+    COUNT(DISTINCT s.species_id) AS c
 FROM specimens s
 JOIN visits v ON v.id = s.visit_id
-GROUP BY MONTH(v.visit_date)
-ORDER BY MONTH(v.visit_date)
+GROUP BY MONTH(v.visit_date), MONTHNAME(v.visit_date)
+ORDER BY month_num
 ");
 
 while($r=$res->fetch_assoc()){
