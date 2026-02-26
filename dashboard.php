@@ -190,7 +190,6 @@ body{
 <th>Date</th>
 <th>Fish</th>
 <th>Location</th>
-<th>Weight</th>
 </tr>
 
 <?php while($row=$latest->fetch_assoc()){ ?>
