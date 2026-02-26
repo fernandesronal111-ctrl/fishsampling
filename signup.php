@@ -6,9 +6,10 @@ $msg = "";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $name  = $_POST['name'];
+    $pass  = ($_POST['password']);
     $email = $_POST['email'];
-    $pass  = md5($_POST['password']); // same as login
-    $role  = $_POST['role'];
+
+    $role = "user"; // ✅ always user (secure)
 
     /* check email exists */
     $check = $conn->prepare("SELECT id FROM users WHERE email=?");
@@ -21,13 +22,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
     else{
 
-        $stmt = $conn->prepare("INSERT INTO users(name,email,password,role) VALUES(?,?,?,?)");
-        $stmt->bind_param("ssss",$name,$email,$pass,$role);
+        $stmt = $conn->prepare("INSERT INTO users(username,password,email) VALUES(?,?,?)");
+        $stmt->bind_param("sss",$name,$pass,$email);
 
         if($stmt->execute()){
             $msg = "Account created successfully ✅ <a href='login.php'>Login Now</a>";
         }else{
-            $msg = "Error creating account";
+            $msg = "Error creating account ❌";
         }
     }
 }
@@ -53,7 +54,7 @@ body{
     box-shadow:0 0 10px #ccc;
 }
 
-input, select{
+input{
     width:100%;
     padding:10px;
     margin:8px 0;
@@ -89,11 +90,6 @@ button{
 <input type="email" name="email" placeholder="Email" required>
 
 <input type="password" name="password" placeholder="Password" required>
-
-<select name="role">
-    <option value="user">User</option>
-    <option value="admin">Admin</option>
-</select>
 
 <button type="submit">Create Account</button>
 
