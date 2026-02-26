@@ -65,7 +65,7 @@ while($r=$res->fetch_assoc()){
    LATEST RECORDS TABLE
 ======================== */
 $latest=$conn->query("
-SELECT v.visit_date, sp.local_name, l.location_name, s.weight
+SELECT v.visit_date, sp.local_name, l.location_name,
 FROM specimens s
 JOIN visits v ON v.id=s.visit_id
 JOIN species sp ON sp.id=s.species_id
