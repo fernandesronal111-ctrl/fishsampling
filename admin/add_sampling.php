@@ -13,11 +13,10 @@ if(isset($_POST['add'])){
     $visit   = $_POST['visit'];
     $species = $_POST['species'];
     $count   = $_POST['count'];
-    $weight  = $_POST['weight'];
     $month   = $_POST['month'];
 
-    $stmt=$conn->prepare("INSERT INTO specimens(visit_id,species_id,count,weight,month) VALUES(?,?,?,?,?)");
-    $stmt->bind_param("iiiis",$visit,$species,$count,$weight,$month);
+    $stmt=$conn->prepare("INSERT INTO specimens(visit_id,species_id,count,month) VALUES(?,?,?,?,?)");
+    $stmt->bind_param("iiiis",$visit,$species,$count,$month);
 
     if($stmt->execute()){
         $msg="Sampling added ✅";
