@@ -184,7 +184,6 @@ v.visit_date,
 l.location_name,
 sp.local_name,
 s.count,
-s.weight,
 s.month
 FROM specimens s
 JOIN visits v ON s.visit_id=v.id
@@ -202,7 +201,6 @@ echo "<tr>
 <td>{$row['location_name']}</td>
 <td>{$row['local_name']}</td>
 <td>{$row['count']}</td>
-<td>{$row['weight']}</td>
 <td>{$row['month']}</td>
 </tr>";
 }
