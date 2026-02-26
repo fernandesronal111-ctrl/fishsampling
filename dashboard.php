@@ -198,7 +198,6 @@ body{
 <td><?=$row['visit_date']?></td>
 <td><?=$row['local_name']?></td>
 <td><?=$row['location_name']?></td>
-<td><?=$row['weight']?> kg</td>
 </tr>
 <?php } ?>
 
