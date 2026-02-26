@@ -64,15 +64,15 @@ while($r=$res->fetch_assoc()){
 /* ========================
    LATEST RECORDS TABLE
 ======================== */
-$latest=$conn->query("
-SELECT v.visit_date, sp.local_name, l.location_name,
+$latest = $conn->query("
+SELECT v.visit_date, sp.local_name, l.location_name
 FROM specimens s
-JOIN visits v ON v.id=s.visit_id
-JOIN species sp ON sp.id=s.species_id
-JOIN locations l ON l.id=v.location_id
+JOIN visits v ON v.id = s.visit_id
+JOIN species sp ON sp.id = s.species_id
+JOIN locations l ON l.id = v.location_id
 ORDER BY v.visit_date ASC
 LIMIT 5
-");
+");;
 ?>
 
 <!DOCTYPE html>
