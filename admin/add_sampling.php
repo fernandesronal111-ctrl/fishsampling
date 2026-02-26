@@ -124,7 +124,7 @@ while($r=$res->fetch_assoc()){
 
 <input type="number" name="count" placeholder="Count" required>
 
-<input type="number" step="0.01" name="weight" placeholder="Weight (kg)" required>
+
 
 <!-- <input name="month" placeholder="Month (January)" required> -->
 
@@ -172,7 +172,6 @@ while($r=$res->fetch_assoc()){
 <th>Location</th>
 <th>Species</th>
 <th>Count</th>
-<th>Weight</th>
 <th>Month</th>
 </tr>
 
