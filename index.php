@@ -105,7 +105,6 @@ v.visit_date,
 sp.local_name,
 sp.scientific_name,
 s.count,
-s.weight,
 l.location_name,
 s.month
 FROM specimens s
@@ -121,7 +120,7 @@ $result=$conn->query($sql);
 if($result->num_rows){
 echo "<table>
 <tr>
-<th>Date</th><th>Local</th><th>Scientific</th><th>Count</th><th>Weight</th><th>Location</th><th>Month</th>
+<th>Date</th><th>Local</th><th>Scientific</th><th>Count</th><th>Location</th><th>Month</th>
 </tr>";
 
 while($row=$result->fetch_assoc()){
