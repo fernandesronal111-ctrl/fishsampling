@@ -129,7 +129,6 @@ echo "<tr>
 <td>{$row['local_name']}</td>
 <td>{$row['scientific_name']}</td>
 <td>{$row['count']}</td>
-<td>{$row['weight']}</td>
 <td>{$row['location_name']}</td>
 <td>{$row['month']}</td>
 </tr>";
