@@ -458,7 +458,6 @@ if($_SESSION['role'] === "admin"){
           <th>Local Name</th>
           <th>Scientific Name</th>
           <th>Count</th>
-          <th>Weight</th>
           <th>Location</th>
           <th>Month</th>
         </tr>
@@ -470,7 +469,6 @@ if($_SESSION['role'] === "admin"){
           <td><?= $row['local_name'] ?></td>
           <td><?= $row['scientific_name'] ?></td>
           <td><?= $row['count'] ?></td>
-          <td><?= $row['weight'] ?></td>
           <td><?= $row['location_name'] ?></td>
           <td><?= $row['month'] ?></td>
         </tr>
