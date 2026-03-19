@@ -428,7 +428,7 @@ if($_SESSION['role'] === "admin"){
   sp.local_name,
   sp.scientific_name,
   s.count,
-  s.weight,
+  
   l.location_name,
   s.month
   FROM specimens s
