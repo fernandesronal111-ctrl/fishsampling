@@ -634,7 +634,7 @@ a{text-decoration:none}
 
   <nav class="sidebar-nav">
     <div class="nav-section">Main</div>
-    <a href="admin_dashboard.php" class="nav-link-item">
+    <a href="dashboard.php" class="nav-link-item">
       <i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span>
     </a>
     <div class="nav-section" style="margin-top:10px">Data Entry</div>
