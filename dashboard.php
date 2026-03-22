@@ -1222,6 +1222,8 @@ function resetSort() {
   currentPage = 1;
   renderTable();
   showToast('Sort reset', 'info');
+  
+
 }
 
 /* ═════════════════════════════════════════════════
@@ -1254,7 +1256,7 @@ function exportToExcel() {
 }
 
 /* ═════════════════════════════════════════════════
-   TOAST NOTIFICATIONS
+   TOAST NOTIFICATION
 ═════════════════════════════════════════════════ */
 const TICONS = {
   success: 'bi-check-circle-fill',
